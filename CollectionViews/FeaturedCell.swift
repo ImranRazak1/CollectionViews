@@ -36,11 +36,17 @@ class FeaturedCell: UICollectionViewCell, SelfConfiguringCell {
         contentView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
+            seperator.heightAnchor.constraint(equalToConstant: 1),
+            
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+        
+        
+        stackView.setCustomSpacing(10, after: seperator)
+        stackView.setCustomSpacing(10, after: subTitle)
     }
     
     func configure(with app: App){
